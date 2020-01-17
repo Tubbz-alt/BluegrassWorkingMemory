@@ -2441,7 +2441,7 @@
         <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin Routine" updates="constant" val="# Send trial onset marker to LSL&amp;#10;#outlet.push_sample('t')&amp;#10;outlet.push_sample(correctseth[index])&amp;#10;PressedYet = 0&amp;#10;&amp;#10;&amp;#10;port.write(correctseth[index])" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="# Send trial onset marker to LSL&amp;#10;#outlet.push_sample('t')&amp;#10;outlet.push_sample(correctseth[index])&amp;#10;PressedYet = 0&amp;#10;&amp;#10;markerStim = correctseth[index]&amp;#10;port.write(markerStim.encode())" valType="extendedCode"/>
         <Param name="Code Type" updates="None" val="Py" valType="str"/>
         <Param name="Each Frame" updates="constant" val="# Send trial onset marker to LSL&amp;#10;#if ((keyPressTrial.keys) and (not PressedYet)):&amp;#10;#    outlet.push_sample(str(keyPressTrial.keys)[0])&amp;#10;#    PressedYet = 1&amp;#10;&amp;#10;&amp;#10;if ((keyPressTrial.keys) and (not PressedYet)):&amp;#10;    if correctseth[index] == str(keyPressTrial.keys)[0]:&amp;#10;        outlet.push_sample('1')&amp;#10;        port.write(b'1')&amp;#10;        #print('correct')&amp;#10;    else:&amp;#10;        outlet.push_sample('2')&amp;#10;        port.write(b'2')&amp;#10;        #print('incorrect')&amp;#10;    PressedYet = 1&amp;#10;" valType="extendedCode"/>
         <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
@@ -2790,7 +2790,7 @@
         <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin Routine" updates="constant" val="# Send trial onset marker to LSL&amp;#10;#outlet.push_sample('t')&amp;#10;outlet.push_sample(correctseth[index])&amp;#10;PressedYet = 0&amp;#10;&amp;#10;&amp;#10;port.write(correctseth[index])" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="# Send trial onset marker to LSL&amp;#10;#outlet.push_sample('t')&amp;#10;outlet.push_sample(correctseth[index])&amp;#10;PressedYet = 0&amp;#10;&amp;#10;&amp;#10;markerStim = correctseth[index]&amp;#10;port.write(markerStim.encode())" valType="extendedCode"/>
         <Param name="Code Type" updates="None" val="Py" valType="str"/>
         <Param name="Each Frame" updates="constant" val="# Send trial onset marker to LSL&amp;#10;#if ((keyPressTrial.keys) and (not PressedYet)):&amp;#10;#    outlet.push_sample(str(keyPressTrial.keys)[0])&amp;#10;#    PressedYet = 1&amp;#10;&amp;#10;&amp;#10;if ((keyPressTrial_2.keys) and (not PressedYet)):&amp;#10;    if correctseth[index] == str(keyPressTrial_2.keys)[0]:&amp;#10;        outlet.push_sample('1')&amp;#10;        port.write(b'1')&amp;#10;        #print('correct')&amp;#10;    else:&amp;#10;        outlet.push_sample('2')&amp;#10;        port.write(b'2')&amp;#10;        #print('incorrect')&amp;#10;    PressedYet = 1&amp;#10;" valType="extendedCode"/>
         <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
