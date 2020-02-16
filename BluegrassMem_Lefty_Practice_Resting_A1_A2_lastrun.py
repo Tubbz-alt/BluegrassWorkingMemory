@@ -1,8 +1,8 @@
 ﻿#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-This experiment was created using PsychoPy3 Experiment Builder (v3.2.3),
-    on January 31, 2020, at 15:04
+This experiment was created using PsychoPy3 Experiment Builder (v3.2.4),
+    on February 16, 2020, at 16:11
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -15,6 +15,8 @@ from __future__ import absolute_import, division
 
 from psychopy import locale_setup
 from psychopy import prefs
+prefs.hardware['audioLib'] = 'ptb'
+prefs.hardware['audioLatencyMode'] = '4'
 from psychopy import sound, gui, visual, core, data, event, logging, clock
 from psychopy.constants import (NOT_STARTED, STARTED, PLAYING, PAUSED,
                                 STOPPED, FINISHED, PRESSED, RELEASED, FOREVER)
@@ -33,7 +35,7 @@ _thisDir = os.path.dirname(os.path.abspath(__file__))
 os.chdir(_thisDir)
 
 # Store info about the experiment session
-psychopyVersion = '3.2.3'
+psychopyVersion = '3.2.4'
 expName = 'untitled'  # from the Builder filename that created this script
 expInfo = {'participant': ''}
 dlg = gui.DlgFromDict(dictionary=expInfo, sortKeys=False, title=expName)
@@ -927,6 +929,10 @@ routineTimer = core.CountdownTimer()  # to track time remaining of each (non-sli
 # Add random and excel library
 import random, xlrd, os, sys
 sys.path.append('./lib/')
+
+import toneplayer
+tone = toneplayer.toneplayer()
+
 pictureSize=(0.75,1)
 greenSize=(1.6,1.2)
 
@@ -4094,9 +4100,11 @@ for thisA1_Block in A1_Blocks:
             if ((keyPressTrial.keys) and (not PressedYet)):
                 if correctseth[index] == str(keyPressTrial.keys)[0]:
                     outlet.push_sample('1')
+                    tone.correct()
                     #print('correct')
                 else:
                     outlet.push_sample('2')
+                    tone.incorrect()
                     #print('incorrect')
                 PressedYet = 1
             
@@ -5162,9 +5170,11 @@ for thisA2_Block in A2_Blocks:
             if ((keyPressTrial_2.keys) and (not PressedYet)):
                 if correctseth[index] == str(keyPressTrial_2.keys)[0]:
                     outlet.push_sample('1')
+                    tone.correct()
                     #print('correct')
                 else:
                     outlet.push_sample('2')
+                    tone.incorrect()
                     #print('incorrect')
                 PressedYet = 1
             
